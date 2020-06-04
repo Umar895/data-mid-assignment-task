@@ -6,6 +6,8 @@ services:
          - postgres
       links:
          - postgres
+      volumes:
+      - /home/umar/Downloads/test_data:/test_data/
    postgres:
       image: postgres:11
       restart: always

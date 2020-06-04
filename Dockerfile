@@ -4,10 +4,11 @@ FROM python:3.7
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 
-COPY . /app
+COPY /src/ /app
 WORKDIR /app
 
 # Install python packages
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-CMD ["python", "./run.py"]
+CMD ["python", "./main.py","-path","/test_data/"]
